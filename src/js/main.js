@@ -69,11 +69,21 @@ const loadGenreDropdown = async () => {
   });
 };
 
-const init = async () => {
+
+const seeMoreAction = () => {
+  const seeMore = document.querySelector('.see-more');
+  seeMore.addEventListener('click', () => {
+    const topRatedSection = document.querySelector('.top-rated-grid');
+    topRatedSection.style.height = 'auto';
+  })
+}
+
+const init = () => {
   loadBestMovies();
   loadCategory('Mystery', 'first-category');
   loadCategory('Comedy', 'second-category');
   loadGenreDropdown();
+  seeMoreAction()
 };
 
 init();
